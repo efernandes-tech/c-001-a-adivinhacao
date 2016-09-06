@@ -1,0 +1,2 @@
+1 - IDE gratuita que ja instala o compilador GCC:
+	http://www.codeblocks.org/
