@@ -1,2 +1,11 @@
 1 - IDE gratuita que ja instala o compilador GCC:
 	http://www.codeblocks.org/
+2 - Quando a condicao (if, while, ...) for muito grande, é interessante armazenar o resultado em uma variavel com um nome que explique a condicao.
+    int acertou = (i == 42 || i == 23 || i == 32 || i == 7);
+3 - Comando para compilar a classe no Windows e Linux:
+    gcc adivinhacao.c -o adivinhacao.exe
+    gcc adivinhacao.c -o adivinhacao
+4 - Comando para executar a programa no Windows e Linux:
+    adivinhacao
+    ./adivinhacao
+5 - Os "números mágicos" são aqueles que tem um significado importante para o código mas estão jogados. Então use CONSTANTES.
