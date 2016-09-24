@@ -1,39 +1,50 @@
 #include <stdio.h>
 
-// O "#..." significa diretivas.
-#define NUMERO_DE_TENTATIVAS 3;
+// O "#..." significa diretivas. E aqui esta declarando uma CONSTANTE.
+// #define NUMERO_DE_TENTATIVAS 3;
 
 int main() {
+
+    // Imprime o cabecalho do jogo.
     printf("************************************\n");
     printf("* Bem vindo ao Jogo de Adivinhação *\n");
     printf("************************************\n");
 
-    int chute;
     int numerosecreto = 42;
 
-    for (int i = 1; i <= NUMERO_DE_TENTATIVAS; i++) {
-        printf("Qual é o seu %do. chute? ", i);
+    int chute;
+    int tentativas = 1;
+
+    while(1) {
+
+        printf("Tentativa %d\n", tentativas);
+        printf("Qual é o seu chute? ");
+
         scanf("%d", &chute);
+        printf("Seu chute foi %d\n", chute);
 
         if(chute < 0) {
-            printf("Você não pode chutar números negativos\n");
-            i--;
+            printf("Você não pode chutar números negativos!\n");
             continue;
         }
 
         // A linguagem sem nao tem o tipo "boolean", então usar a convencao "int 0 == false" e "int 1 == true".
-        int acertou = chute == numerosecreto;
+        int acertou = (chute == numerosecreto);
         int maior = chute > numerosecreto;
 
         if(acertou) {
             printf("Parabéns! Você acertou!\n");
+            printf("Jogue de novo, você é um bom jogador!\n");
             break;
         } else if(maior) {
             printf("Seu chute foi maior do que o número secreto!\n");
         } else {
             printf("Seu chute foi menor do que o número secreto!\n");
         }
+
+        tentativas++;
     }
 
-    printf("Obrigado por jogar!\n");
+    printf("Fim de jogo!\n");
+    printf("Você acertou em %d tentativas!", tentativas);
 }
