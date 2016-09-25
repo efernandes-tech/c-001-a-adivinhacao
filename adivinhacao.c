@@ -61,7 +61,7 @@ int main() {
 
         // Vc precisa fazer o "casting" pq o compilador le da direita para esquerda, entao ele inseri um "int" na variavel mesmo ela sendo "double".
         double pontosperdidos = abs(chute - numerosecreto) / (double) 2;
-        // "if" para resolver o bug do chute 30, pq o "-(-1)" dava "+" e o jogador ganhava pontos por errar. Vc tmb pode usar a funcao "abs()" que transforma tudo em positivo.
+        // "if" para resolver o bug do chute 30, pq o "-(-1)" dava "+" e o jogador ganhava pontos por errar. Vc tmb pode usar a funcao "abs()" que transforma tudo em positivo pq ela devolve o valor absoluto.
         // if (pontosperdidos < 0) {
         //     pontosperdidos = pontosperdidos * -1;
         // }
